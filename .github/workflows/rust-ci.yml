@@ -16,12 +16,12 @@ jobs:
       - name: Set up Rust
         uses: actions/checkout@v2
       - name: Install cargo-audit
-        uses: cargo install cargo-audit
+        run: cargo install cargo-audit
       - name: Build
-        uses: cargo build --verbose
+        run: cargo build --verbose
       - name: Test
-        uses: cargo test --verbose
+        run: cargo test --verbose
       - name: Clippy
-        uses: cargo clippy --verbose -- -D warnings
+        run: cargo clippy --verbose -- -D warnings
       - name: Audit
-        uses: cargo audit
+        run: cargo audit
